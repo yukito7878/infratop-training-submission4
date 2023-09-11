@@ -1,0 +1,21 @@
+<h1 class='background-color:red; my-3'>User info</h1>
+<div>
+    <%= image_tag user.get_profile_image(100, 100) %>
+    <table class='table'>
+        <tbody>
+            <tr>
+                <th>Name:</th>
+                <th><%= user.name %></th>
+            </tr>
+            <tr>
+                <th>Introduction:</th>
+                <th><%= user.introduction %></th>
+            </tr>
+        </tbody>
+    </table>
+    
+    <%= link_to edit_user_path(user.id), class: 'btn btn-secondary col-lg-12 text-center border border-3 my-2 py-2', style: 'text-decoration: none;' do %>
+        <i class="fa-solid fa-user-cog" style='color: white;'></i>
+    <% end %>
+</div>
+

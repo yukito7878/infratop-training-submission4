@@ -1,0 +1,38 @@
+<div class='container'>
+    <div class='d-flex justify-content-center'>
+        <%= form_with model: @book, url: book_path(@book), method: :patch do |f| %>
+    
+            <div class='justify-content-center'>
+                <h1>Editing Book</h1>
+                <% if @book.errors.any? %>
+                    <div>
+                        <div><%= @book.errors.count %> errors prohibited this book from being saved:</div>
+                        <div>
+                            <ul>
+                                <% @book.errors.full_messages.each do |message| %>
+                                    <li></span><%= message %></li>
+                                <% end %>
+                            </ul>
+                        </div>
+                    </div>
+                <% end %>
+                <div class='my-3'>
+                    <label for='inputTitle'>Title</label></br>
+                    <%= f.text_field :title, class: 'form-control', style: 'font-size: 16px; width: 450px;', autofocus: true, id: 'inputTitle', placeholder: 'title' %>
+                </div>
+                <div class='my-3'>
+                    <label for='inputBody'>Opinion</label></br>
+                    <%= f.text_area :body, class: 'form-control', style: 'font-size: 16px; width: 450px;', autofocus: true, id: 'inputBody', placeholder: 'body' %>
+                </div>
+        
+                <div><%= f.submit 'Update Book', class: 'btn btn-dark btn-custom;' %></div>
+                <div>
+                    <%= link_to 'Show', book_path(@book) %>|
+                    <%= link_to 'Back', books_path %>
+                </div>
+                
+                
+            </div>
+        <% end %>
+    </div>
+</div>

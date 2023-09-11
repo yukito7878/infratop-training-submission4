@@ -1,0 +1,14 @@
+@use '~bootstrap/scss/bootstrap';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    margin: 0;
+    line-height: 70px;
+}
+.gray-button{
+    background-color: gray;
+}

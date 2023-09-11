@@ -1,0 +1,11 @@
+<h2>New book</h2>
+<%= form_with model: book, url: '/books', method: :post do |f| %>
+    <h4>title</h4>
+    <%= f.text_field :title, class: 'form-control', style: 'font-size: 16px;', value: '' %>
+    <h4>body</h4>
+    <%= f.text_area :body, class: 'form-control', style: 'font-size: 16px;', value: '' %>
+    <div class='my-3'>
+        <%= f.submit 'Create Book', class: 'btn btn-success' %>
+    </div>
+    
+<% end %>
