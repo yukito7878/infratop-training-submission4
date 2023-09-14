@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get 'home/about' => 'homes#about', as: 'home_about'
   # サインアップページをルートパスにする
   
-  resources :books, only: [:new, :index, :show, :edit, :update, :create, :destroy]
+  resources :books, only: [:new, :index, :show, :edit, :update, :create, :destroy] do
+    resource :favorites, only: [:create, :destroy]
+    resources :book_comments, only: [:create, :destroy]
+  end
+  
   resources :users, only: [:edit, :update, :index, :show]
   
 
